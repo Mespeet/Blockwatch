@@ -9,6 +9,8 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 
+import Link from 'next/link';
+
 export default function Vaults() {
     const [vaultCount, setVaultCount] = useState(null); // State to store vault count
 
@@ -25,6 +27,7 @@ export default function Vaults() {
     }, []);
 
     return (
+        <Link href="/vaults">
         <Card>
             <CardHeader>
                 <CardTitle>Vaults</CardTitle>
@@ -38,5 +41,6 @@ export default function Vaults() {
                 )}
             </CardContent>
         </Card>
+        </Link>
     );
 }

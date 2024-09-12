@@ -6,6 +6,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+import Link from 'next/link'
+
 interface VaultProgressProps {
   vault: number;  // Replace 'any' with the actual type of 'vault' if known
   progress: number;  // Assuming 'progress' is a number. Adjust the type if different
@@ -13,9 +15,10 @@ interface VaultProgressProps {
 
 export default function VaultProgress({vault, progress}: VaultProgressProps) {
   const _p = progress;
-  const _v = vault;
+  const _v = vault + 1;
 
   return (
+    <Link href={`/vaults/${_v}`}>
     <Card>
       <CardHeader>
         <CardTitle>Vault {_v}</CardTitle>
@@ -52,5 +55,6 @@ export default function VaultProgress({vault, progress}: VaultProgressProps) {
         </div>
       </CardContent>
     </Card>
+    </Link>
   );
 }
